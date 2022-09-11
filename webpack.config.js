@@ -26,7 +26,10 @@ module.exports = {
     },
     //importの際に省略する対象の拡張子を配列で指定
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json'] //指定されている拡張子のファイルはimportの際に拡張子を省略できる
+        alias: {
+            '@': path.resolve(__dirname, 'src')
+        },
+        extensions: ['.ts', '.tsx', '.js', '.json']
     },
     //webpack-dev-serverの設定
     devServer: {
