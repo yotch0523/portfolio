@@ -21,6 +21,7 @@ import {
     ListItem,
     Spacer,
     useDisclosure,
+    Divider,
 } from '@chakra-ui/react'
 
 const Menu = () => {
@@ -45,24 +46,28 @@ const Menu = () => {
                     right="20px"
                     top="12px"
                 >
-                    <HamburgerIcon fontSize="2.4rem" />
+                    <HamburgerIcon
+                        _focus={ { boxShadow: 'none' } }
+                        fontSize="2.4rem"
+                    />
                 </Button>
             </Flex>
 
             <Drawer
                 isOpen={isOpen}
-                placement='right'
                 onClose={onClose}
+                placement="bottom"
+                size="full"
             >
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerCloseButton />
-                    <DrawerHeader>Contents</DrawerHeader>
+                    <DrawerCloseButton p="28px" fontSize={['2.0rem', '1.2rem', '1.2rem', '1.2rem']} />
+                    <DrawerHeader fontSize={['4.0rem', '2.8rem', '2.8rem', '2.8rem']}>Contents</DrawerHeader>
                     <DrawerBody>
                         <List spacing={3}>
                             {pages.map((page, index) => {
                                 return(
-                                    <ListItem key={`menu-item-${index}`}>
+                                    <ListItem fontSize={['2.8rem', '1.8rem', '1.8rem', '1.8rem']} key={`menu-item-${index}`}>
                                         <Link
                                             to={page.to}
                                             onClick={onClose}
@@ -75,10 +80,11 @@ const Menu = () => {
                             })}
                         </List>
                     </DrawerBody>
+                    <Divider />
+                    <DrawerFooter justifyContent="start">
+                        Youki.Y
+                    </DrawerFooter>
                 </DrawerContent>
-                <DrawerFooter>
-                    Youki YOSHIOKA
-                </DrawerFooter>
             </Drawer>
         </>
     )

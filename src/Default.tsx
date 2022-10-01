@@ -14,6 +14,8 @@ const Default = () => {
             <chakra.div
                 maxW={[null, null, null, "1280px"]}
                 mx="auto"
+                px="20px"
+                py="12px"
             >
                 <Routes>
                     <Route path={`/`} element={<Home />} />
