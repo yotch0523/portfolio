@@ -1,10 +1,17 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import Default from './Default'
 
 const App = () => {
     return (
-        <div>
-            <h1>Hello React!</h1>
-        </div>
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/*" element={<Default />} />
+                </Routes>
+            </BrowserRouter>
+        </>
     )
 }
 

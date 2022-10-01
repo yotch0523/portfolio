@@ -38,3 +38,10 @@ packages/react-devtools-shell/dist
 packages/react-devtools-timeline/dist
 
 dist/
+
+*.jpg
+*.jpeg
+*.gif
+*.png
+
+yarn.lock

@@ -1,8 +1,15 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client';
 import App from './App'
 
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-)
+import { ChakraProvider } from '@chakra-ui/react'
+
+const container = document.getElementById('app');
+if (container) {
+    const root = createRoot(container);
+    root.render(
+        <ChakraProvider>
+            <App />
+        </ChakraProvider>
+    )
+}
