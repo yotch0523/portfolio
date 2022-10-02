@@ -5,7 +5,6 @@ import { chakra } from '@chakra-ui/system'
 import Menu from './components/Menu'
 import Home from './pages/Home'
 import About from './pages/About'
-import Blogs from './pages/Blogs'
 
 const Default = () => {
     return (
@@ -20,7 +19,6 @@ const Default = () => {
                 <Routes>
                     <Route path={`/`} element={<Home />} />
                     <Route path={`/about`} element={<About />} />
-                    <Route path={`/blogs`} element={<Blogs />} />
                 </Routes>
             </chakra.div>
         </>

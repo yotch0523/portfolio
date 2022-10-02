@@ -1,10 +1,10 @@
 import React from 'react'
 import {
     FaRegIdCard,
-    FaBookOpen,
     FaHome
 } from 'react-icons/fa'
 import { Link } from "react-router-dom"
+import { useWindowSize } from "react-use"
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {
     Drawer,
@@ -26,7 +26,7 @@ import {
 
 const Menu = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-
+    const height = useWindowSize()
     const pages = getPages()
 
     return (
@@ -60,7 +60,7 @@ const Menu = () => {
                 size="full"
             >
                 <DrawerOverlay />
-                <DrawerContent>
+                <DrawerContent maxH={`${height}px`}>
                     <DrawerCloseButton p="28px" fontSize={['2.0rem', '1.2rem', '1.2rem', '1.2rem']} />
                     <DrawerHeader fontSize={['4.0rem', '2.8rem', '2.8rem', '2.8rem']}>Contents</DrawerHeader>
                     <DrawerBody>
@@ -102,11 +102,6 @@ const getPages = () => {
             "icon": FaRegIdCard,
             "label": "About"
         },
-        {
-            "to": `/blogs`,
-            "icon": FaBookOpen,
-            "label": "Blogs"
-        }
     ]
 }
 
