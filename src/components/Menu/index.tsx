@@ -26,7 +26,7 @@ import {
 
 const Menu = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const height = useWindowSize()
+    const { height } = useWindowSize()
     const pages = getPages()
 
     return (
