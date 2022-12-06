@@ -1,108 +1,105 @@
 import React from 'react'
-import {
-    FaRegIdCard,
-    FaHome
-} from 'react-icons/fa'
 import { Link } from "react-router-dom"
 import { useWindowSize } from "react-use"
-import { HamburgerIcon } from '@chakra-ui/icons'
 import {
-    Drawer,
-    DrawerBody,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerOverlay,
-    DrawerContent,
-    DrawerCloseButton,
-    Button,
-    Flex,
-    List,
-    ListIcon,
-    ListItem,
-    Spacer,
-    useDisclosure,
-    Divider,
+  Fade,
+  Flex,
+  useDisclosure,
+  Text,
 } from '@chakra-ui/react'
 
+import Bar from '@/components/Menu/Bar'
+import MyHamburger from '@/components/Menu/MyHamburger'
+import { MenuLink } from '@/common/types'
+
 const Menu = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-    const { height } = useWindowSize()
-    const pages = getPages()
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { width, height } = useWindowSize()
+  const links = getLinks()
+
+  const MOBILE_DEVICE_WIDTH = 480
+  const showHamburger = width <= MOBILE_DEVICE_WIDTH
+
+  const HamburgerMenu = () => {
+    if (!showHamburger) return(<></>)
 
     return (
-        <>
-            <Flex
-                as="header"
-                bg="transparent"
-                px="8px"
-                py="4px"
-                w="100%"
-            >
-                <Spacer />
-                <Button
-                    onClick={onOpen}
-                    bg="transparent"
-                    position="fixed"
-                    right="20px"
-                    top="12px"
-                >
-                    <HamburgerIcon
-                        _focus={ { boxShadow: 'none' } }
-                        fontSize="2.4rem"
-                    />
-                </Button>
-            </Flex>
-
-            <Drawer
-                isOpen={isOpen}
-                onClose={onClose}
-                placement="bottom"
-                size="full"
-            >
-                <DrawerOverlay />
-                <DrawerContent maxH={`${height}px`}>
-                    <DrawerCloseButton p="28px" fontSize={['2.0rem', '1.2rem', '1.2rem', '1.2rem']} />
-                    <DrawerHeader fontSize={['4.0rem', '2.8rem', '2.8rem', '2.8rem']}>Contents</DrawerHeader>
-                    <DrawerBody>
-                        <List spacing={3}>
-                            {pages.map((page, index) => {
-                                return(
-                                    <ListItem fontSize={['2.8rem', '1.8rem', '1.8rem', '1.8rem']} key={`menu-item-${index}`}>
-                                        <Link
-                                            to={page.to}
-                                            onClick={onClose}
-                                        >
-                                            <ListIcon as={page.icon} />
-                                            {page.label}
-                                        </Link>
-                                    </ListItem>
-                                )
-                            })}
-                        </List>
-                    </DrawerBody>
-                    <Divider />
-                    <DrawerFooter justifyContent="start">
-                        Youki.Y
-                    </DrawerFooter>
-                </DrawerContent>
-            </Drawer>
-        </>
+      <MyHamburger
+        isOpen={isOpen}
+        onOpen={onOpen}
+        onClose={onClose}
+        style={{
+          position: "fixed",
+          bottom: "0",
+          right: "0",
+        }}
+      />
     )
+  }
+
+  const MenuBar = () => {
+    if (showHamburger) return(<></>)
+
+    return (
+      <Bar links={links} onClose={onClose} />
+    )
+  }
+
+  return (
+    <>
+      <MenuBar />
+      <HamburgerMenu />
+
+      <Fade in={isOpen}>
+        <Flex
+          bg={'black'}
+          color={'white'}
+          display={isOpen ? 'flex' : 'none'}
+          flexFlow={'column'}
+          height={height}
+          justifyContent="center"
+          margin="auto"
+          opacity={'.8'}
+          position="fixed"
+          top="0"
+          bottom="0"
+          left="0"
+          right="0"
+        >
+          {links.map((page, index) => {
+            return(
+              <Link
+                to={page.to}
+                onClick={onClose}
+                key={`menu-item-${index}`}
+              >
+                <Text
+                  align="center"
+                  fontSize={'2.0rem'}
+                  fontWeight="bold"
+                >
+                  {page.label}
+                </Text>
+              </Link>
+            )
+          })}
+        </Flex>
+      </Fade>
+    </>
+  )
 }
 
-const getPages = () => {
-    return [
-        {
-            "to": `/`,
-            "icon": FaHome,
-            "label": "Home"
-        },
-        {
-            "to": `/about`,
-            "icon": FaRegIdCard,
-            "label": "About"
-        },
-    ]
+const getLinks = (): MenuLink[] => {
+  return [
+    {
+      to: `/`,
+      label: "Home"
+    },
+    {
+      to: `/about`,
+      label: "About"
+    },
+  ]
 }
 
 export default Menu
