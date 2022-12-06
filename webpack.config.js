@@ -10,7 +10,7 @@ module.exports = {
     entry: './src/index.tsx',
     //ファイルの出力設定
     output: {
-        path: path.join(__dirname, '/dist'), //出力先のディレクトリ（絶対パスで指定）
+        path: path.join(__dirname, '/build'), //出力先のディレクトリ（絶対パスで指定）
         filename: 'bundle.js' //出力ファイル名
     },
     //デバッグのためのSourceMap（ビルド前後の対応関係を記述したファイル）の出力設定
