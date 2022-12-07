@@ -39,9 +39,4 @@ packages/react-devtools-timeline/dist
 
 dist/
 
-*.jpg
-*.jpeg
-*.gif
-*.png
-
 yarn.lock

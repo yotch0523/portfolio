@@ -21,6 +21,17 @@ module.exports = {
             {
                 test: /\.tsx?$/, //build対象（loaderを適用するファイル）を指定
                 loader: 'ts-loader', //適用するloaderを指定
+            },
+            {
+                test: /\.(png|jpg|jpeg|svg)/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'images/*/[name].[ext]'
+                        }
+                    }
+                ]
             }
         ]
     },
