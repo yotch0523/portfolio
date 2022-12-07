@@ -19,6 +19,13 @@ const breakpoints = {
 
 const theme = extendTheme({
   breakpoints,
+  styles: {
+    global: {
+      body: {
+        minHeight: "100vh"
+      }
+    }
+  }
 })
 
 const container = document.getElementById('app');

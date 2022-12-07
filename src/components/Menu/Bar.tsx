@@ -7,8 +7,6 @@ import {
   Text,
 } from '@chakra-ui/react'
 
-import { Divide as Hamburder} from 'hamburger-react'
-
 import { MenuLink } from '@/common/types'
 
 type Props = {
