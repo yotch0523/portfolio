@@ -1,12 +1,16 @@
 import React from 'react'
-import { chakra } from '@chakra-ui/react'
+
+import { Helmet } from 'react-helmet-async'
 
 const Home = () => {
-    return (
-        <>
-            <p>home</p>
-        </>
-    )
+  return (
+    <>
+      <Helmet>
+        <title>Home | yotch</title>
+      </Helmet>
+      <p>home</p>
+    </>
+  )
 }
 
 export default Home
