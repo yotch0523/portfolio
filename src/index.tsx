@@ -6,6 +6,7 @@ import {
     ChakraProvider,
     extendTheme,
 } from '@chakra-ui/react'
+import { HelmetProvider } from 'react-helmet-async'
 
 const breakpoints = {
     base: '0px',
@@ -17,15 +18,17 @@ const breakpoints = {
 }
 
 const theme = extendTheme({
-    breakpoints,
+  breakpoints,
 })
 
 const container = document.getElementById('app');
 if (container) {
-    const root = createRoot(container);
-    root.render(
-        <ChakraProvider theme={theme}>
-            <App />
-        </ChakraProvider>
-    )
+  const root = createRoot(container);
+  root.render(
+    <HelmetProvider>
+      <ChakraProvider theme={theme}>
+        <App />
+      </ChakraProvider>
+    </HelmetProvider>
+  )
 }

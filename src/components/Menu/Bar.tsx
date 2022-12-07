@@ -26,30 +26,28 @@ const Bar = (props: Props) => {
         h={16}
         alignItems={'center'}
         justifyContent={'space-between'}
-        px={'20px'}
+        px={'28px'}
       >
         <HStack spacing={8} alignItems={'center'}></HStack>
-        <HStack spacing={8} alignItems={'center'}>
-          <HStack
-            as={'nav'}
-            h={4}
-            alignItems={'center'}
-            display={{ base: 'none', md: 'flex' }}
-          >
-            {links.map((link, index) => {
-              return(
-                <Link
-                  to={link.to}
-                  onClick={onClose}
-                  key={`nav-link-${index}`}
-                >
-                  <Text fontSize="20px">
-                    {link.label}
-                  </Text>
-                </Link>
-              )
-            })}
-          </HStack>
+        <HStack
+          as={'nav'}
+          alignItems={'start'}
+          display={{ base: 'none', sm: 'flex' }}
+          spacing={8}
+        >
+          {links.map((link, index) => {
+            return(
+              <Link
+                to={link.to}
+                onClick={onClose}
+                key={`nav-link-${index}`}
+              >
+                <Text fontSize={{ base: '20px', sm: '24px', md: '28px' }}>
+                  {link.label}
+                </Text>
+              </Link>
+            )
+          })}
         </HStack>
       </Flex>
     </Box>

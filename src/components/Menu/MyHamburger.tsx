@@ -21,7 +21,8 @@ const MyHamburger = (props: Props) => {
   return (
     <Box
       _focus={{ boxShadow: 'none' }}
-      p={'20px'}
+      bg="transparent"
+      p={'36px'}
       style={style}
       zIndex={100}
     >
@@ -36,6 +37,7 @@ const MyHamburger = (props: Props) => {
         }}
         toggled={isOpen}
         rounded
+        size={54}
       />
     </Box>
   )
