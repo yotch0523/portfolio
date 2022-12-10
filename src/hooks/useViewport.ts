@@ -15,7 +15,7 @@ export const useViewport = () => {
         setViewport(
         getViewport({
             width: `${
-            window.innerWidth > MIN_DEVICE_WIDTH
+            window.innerWidth >= MIN_DEVICE_WIDTH
                 ? 'device-width'
                 : MIN_DEVICE_WIDTH
             }`,

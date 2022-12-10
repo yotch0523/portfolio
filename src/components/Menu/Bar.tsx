@@ -19,7 +19,7 @@ const Bar = (props: Props) => {
   const onClose = props.onClose
 
   return (
-    <Box borderWidth={'1px'}>
+    <Box borderWidth={'1px'} boxSizing={'border-box'} >
       <Flex
         h={16}
         alignItems={'center'}

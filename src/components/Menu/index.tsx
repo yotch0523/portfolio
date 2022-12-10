@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom"
-import { useWindowSize } from "react-use"
+import { Link } from 'react-router-dom'
 import {
   Fade,
   Flex,
@@ -11,10 +10,11 @@ import {
 import Bar from '@/components/Menu/Bar'
 import MyHamburger from '@/components/Menu/MyHamburger'
 import { MenuLink } from '@/common/types'
+import useWindowSize from '@/hooks/useWindowSize'
 
 const Menu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const { width, height } = useWindowSize()
+  const { width } = useWindowSize()
   const links = getLinks()
 
   const MOBILE_DEVICE_WIDTH = 480
@@ -56,7 +56,6 @@ const Menu = () => {
           color={'white'}
           display={isOpen ? 'flex' : 'none'}
           flexFlow={'column'}
-          height={height}
           justifyContent="center"
           margin="auto"
           opacity={'.8'}

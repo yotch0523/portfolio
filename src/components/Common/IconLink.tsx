@@ -31,7 +31,7 @@ const IconLink = (props: Props) => {
   const isExternal = props.isExternal ?? true
 
   return(
-    <Link href={to} key={`icon-link-${name}`} isExternal={isExternal}>
+    <Link href={to} isExternal={isExternal}>
       <DynamicIcon name={icon} color={color} size={size} isExterrnal={isExternal} />
     </Link>
   )
