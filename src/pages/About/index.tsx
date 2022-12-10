@@ -1,13 +1,11 @@
 import React from 'react'
 
-import { Helmet } from 'react-helmet-async'
+import HeadBlock from '@/components/Common/HeadBlock'
 
 const About = () => {
   return (
     <>
-      <Helmet>
-        <title>About | yotch</title>
-      </Helmet>
+      <HeadBlock title={'About | yotch'} />
       <p>about</p>
     </>
   )

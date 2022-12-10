@@ -6,8 +6,7 @@ import {
   Image,
 } from '@chakra-ui/react'
 
-import { Helmet } from 'react-helmet-async'
-
+import HeadBlock from '@/components/Common/HeadBlock'
 import IconLink from '@/components/Common/IconLink'
 
 import { ServiceLink } from '@/common/types'
@@ -19,9 +18,7 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Home | yotch</title>
-      </Helmet>
+      <HeadBlock title={'Home | yotch'} />
       <Image
         py={{ base: '0', sm: '20px' }}
         m="auto"
@@ -42,6 +39,7 @@ const Home = () => {
                 icon={link.icon}
                 to={link.to}
                 color={link.color}
+                key={`icon-link-${link.name}`}
                 size={32}
               />
             )
