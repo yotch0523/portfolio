@@ -7,16 +7,16 @@
             "color": "#000000"
         },
         {
-            "name": "Twitter",
-            "icon": "SiTwitter",
-            "to": "https://twitter.com/hogehogepanic",
-            "color": "#1d9bf0"
-        },
-        {
             "name": "Zenn",
             "icon": "SiZenn",
             "to": "https://zenn.dev/youki1225",
             "color": "#3ea8ff"
+        },
+        {
+            "name": "LinkedIn",
+            "icon": "SiLinkedin",
+            "to": "https://www.linkedin.com/in/youki-yoshioka-4616051a9/",
+            "color": "#0e76a8"
         }
     ]
 }

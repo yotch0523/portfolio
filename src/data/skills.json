@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "name": "C#",
+            "icon": "SiCsharp",
+            "color": "#ac99ea"
+        },
+        {
+            "name": "TypeScript",
+            "icon": "SiTypescript",
+            "color": "#3178c6"
+        },
+        {
+            "name": "PHP",
+            "icon": "SiPhp",
+            "color": "#7a86b8"
+        },
+        {
+            "name": "Azure",
+            "icon": "SiMicrosoftazure",
+            "color": "#0078d4"
+        }
+    ]
+}
