@@ -10,6 +10,7 @@ import HeadBlock from '@/components/Common/HeadBlock'
 import IconLink from '@/components/Common/IconLink'
 
 import { ServiceLink } from '@/common/types'
+import { commonStyles } from '@/common/consts/common-styles'
 import linkData from '@/data/serviceLinks.json'
 import eyeCatchImage from '@/images/home/eyecatch.jpg'
 
@@ -18,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-      <HeadBlock title={'Home | yotch'} />
+      <HeadBlock title={'Home | Youki'} />
       <Image
         py={{ base: '0', sm: '20px' }}
         m="auto"
@@ -27,11 +28,11 @@ const Home = () => {
       />
 
       {/* contents */}
-      <Box px={'20px'} py={'20px'}>
-        <Heading as="h1" size="3xl">yotch</Heading>
+      <Box px={commonStyles.contentWrap.paddingX} py={commonStyles.contentWrap.paddingY}>
+        <Heading as="h1" size="2xl">Youki</Heading>
 
         {/* links */}
-        <HStack pt={'40px'} spacing={4}>
+        <HStack pt={commonStyles.innerContentWrap.paddingTop} spacing={4}>
           {links.map((link, _) => {
             return(
               <IconLink
