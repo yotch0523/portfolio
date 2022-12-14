@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "build:prod": "webpack --mode=production",
     "start": "webpack-dev-server"
   },
   "repository": "https://github.com/yotch0523/portfolio.git",
