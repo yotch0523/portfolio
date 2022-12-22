@@ -51,8 +51,8 @@ const Home = () => {
               </Link>
             )
           })}
-          <Text>under development</Text>
         </HStack>
+        <Text mt="10">under development...</Text>
       </Box>
     </>
   )
