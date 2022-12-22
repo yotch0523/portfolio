@@ -5,16 +5,25 @@ import {
   HStack,
   Text,
 } from '@chakra-ui/react'
+import {
+  SiCsharp,
+  SiTypescript,
+  SiPhp,
+  SiMicrosoftazure,
+} from 'react-icons/si'
 
 import HeadBlock from '@/components/Common/HeadBlock'
-import Icon from '@/components/Common/Icon'
 import { commonStyles } from '@/common/consts/common-styles'
 import { Skill } from '@/common/types'
 import skillData from '@/data/skills.json'
 
+type IconPropertiers = {
+  icon: string;
+  color: string;
+}
+
 const About = () => {
   const skills: Skill[] = skillData.data
-  const iconSize = 32
 
   return (
     <>
@@ -36,7 +45,8 @@ const About = () => {
             {
               skills.map((skill, _) => {
                 return(
-                  <Icon name={skill.name} icon={skill.icon} color={skill.color} size={iconSize} />
+                  // <Icon name={skill.name} icon={skill.icon} color={skill.color} size={iconSize} />
+                  <GetIcon key={`skill-${skill.name}`} icon={skill.icon} color={skill.color} />
                 )
               })
             }
@@ -45,6 +55,32 @@ const About = () => {
       </Box>
     </>
   )
+}
+
+const GetIcon = (properties: IconPropertiers) => {
+  const iconSize = 32
+  const icon = properties.icon
+  const color = properties.color
+
+  switch (icon) {
+    case "SiGitHub":
+      return(
+        <SiCsharp color={color} size={iconSize} />
+      )
+    case "SiTypescript":
+      return(
+        <SiTypescript color={color} size={iconSize} />
+      )
+    case "SiPhp":
+      return(
+        <SiPhp color={color} size={iconSize} />
+      )
+    case "SiMicrosoftazure":
+      return(
+        <SiMicrosoftazure color={color} size={iconSize} />
+      )
+  }
+  return(<></>)
 }
 
 export default About
