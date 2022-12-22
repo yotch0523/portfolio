@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
     //モードをdevelopment、production、noneから設定（必須）
@@ -53,6 +54,7 @@ module.exports = {
         new HtmlWebpackPlugin({ //webpackでbuildされたJSやCSSを表示するHTMLを自動的に生成するplugin
             template: './public/index.html', //テンプレートとして使用するHTMLファイルを指定
             filename: 'index.html' //生成するHTMLファイル名
-        })
+        }),
+        new BundleAnalyzerPlugin()
     ]
 }
