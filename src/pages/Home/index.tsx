@@ -5,6 +5,7 @@ import {
   HStack,
   Image,
   Link,
+  Text,
 } from '@chakra-ui/react'
 import {
   SiGithub,
@@ -50,6 +51,7 @@ const Home = () => {
               </Link>
             )
           })}
+          <Text>under development</Text>
         </HStack>
       </Box>
     </>
