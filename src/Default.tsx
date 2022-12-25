@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { chakra } from '@chakra-ui/system'
 
 import Menu from '@/components/Menu'
 import Footer from '@/components/Footer'
-import Home from '@/pages/Home'
-import About from '@/pages/About'
+
+const Home = lazy(() => import('@/pages/Home'))
+const About = lazy(() => import('@/pages/About'))
 
 const Default = () => {
   return (
@@ -17,10 +18,12 @@ const Default = () => {
         px={{ base: '0', sm: '20px' }}
         py={{ base: '0', sm: '12px' }}
       >
-        <Routes>
-          <Route path={`/`} element={<Home />} />
-          <Route path={`/about`} element={<About />} />
-        </Routes>
+        <Suspense fallback="...">
+          <Routes>
+            <Route path={`/`} element={<Home />} />
+            <Route path={`/about`} element={<About />} />
+          </Routes>
+        </Suspense>
       </chakra.div>
       <Footer />
     </>
