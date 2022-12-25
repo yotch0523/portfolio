@@ -7,11 +7,14 @@ module.exports = {
     //production: 本番時のファイル出力モード（最適化されて出力）
     mode: 'development',
     //メインとなるjsファイル(エントリーポイント)
-    entry: './src/index.tsx',
+    entry: {
+        'index': './src/index.tsx',
+        'about': './src/pages/About/index.tsx',
+    },
     //ファイルの出力設定
     output: {
         path: path.join(__dirname, '/build'), //出力先のディレクトリ（絶対パスで指定）
-        filename: 'bundle.js' //出力ファイル名
+        filename: '[name].bundle.js' //出力ファイル名
     },
     //デバッグのためのSourceMap（ビルド前後の対応関係を記述したファイル）の出力設定
     devtool: 'inline-source-map',
@@ -44,9 +47,9 @@ module.exports = {
     },
     //webpack-dev-serverの設定
     devServer: {
-        static: path.join(__dirname, '/dist'), //表示する静的ファイル（HTML）の場所を指定
-        open: true, //ブラウザを自動的に起動
-        port: 3000 //ポート番号を指定（デフォルトのポート：8080）
+        static: path.join(__dirname, '/build'),
+        open: true,
+        port: 3000
     },
     //pluginの設定
     plugins: [
@@ -54,5 +57,10 @@ module.exports = {
             template: './public/index.html', //テンプレートとして使用するHTMLファイルを指定
             filename: 'index.html' //生成するHTMLファイル名
         })
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            chunks :'all'
+        }
+    }
 }
