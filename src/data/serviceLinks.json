@@ -13,6 +13,12 @@
             "color": "#3ea8ff"
         },
         {
+            "name": "Twitter",
+            "icon": "SiTwitter",
+            "to": "https://twitter.com/YoukiYotch",
+            "color": "#009bf0"
+        },
+        {
             "name": "LinkedIn",
             "icon": "SiLinkedin",
             "to": "https://www.linkedin.com/in/youki-yoshioka-4616051a9/",

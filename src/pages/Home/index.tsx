@@ -11,6 +11,7 @@ import {
   SiGithub,
   SiLinkedin,
   SiZenn,
+  SiTwitter,
 } from 'react-icons/si'
 
 import HeadBlock from '@/components/Common/HeadBlock'
@@ -65,17 +66,13 @@ const GetIcon = (properties: IconPropertiers) => {
 
   switch (icon) {
     case "SiGitHub":
-      return(
-        <SiGithub color={color} size={iconSize} />
-      )
+      return(<SiGithub color={color} size={iconSize} />)
     case "SiZenn":
-      return(
-        <SiZenn color={color} size={iconSize} />
-      )
+      return(<SiZenn color={color} size={iconSize} />)
+    case "SiTwitter":
+      return(<SiTwitter color={color} size={iconSize} />)
     case "SiLinkedin":
-      return(
-        <SiLinkedin color={color} size={iconSize} />
-      )
+      return(<SiLinkedin color={color} size={iconSize} />)
   }
   return(<></>)
 }
