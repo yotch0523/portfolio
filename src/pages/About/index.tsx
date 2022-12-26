@@ -63,22 +63,14 @@ const GetIcon = (properties: IconPropertiers) => {
   const color = properties.color
 
   switch (icon) {
-    case "SiGitHub":
-      return(
-        <SiCsharp color={color} size={iconSize} />
-      )
+    case "SiCsharp":
+      return(<SiCsharp color={color} size={iconSize} />)
     case "SiTypescript":
-      return(
-        <SiTypescript color={color} size={iconSize} />
-      )
+      return(<SiTypescript color={color} size={iconSize} />)
     case "SiPhp":
-      return(
-        <SiPhp color={color} size={iconSize} />
-      )
+      return(<SiPhp color={color} size={iconSize} />)
     case "SiMicrosoftazure":
-      return(
-        <SiMicrosoftazure color={color} size={iconSize} />
-      )
+      return(<SiMicrosoftazure color={color} size={iconSize} />)
   }
   return(<></>)
 }
