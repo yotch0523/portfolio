@@ -65,7 +65,7 @@ const GetIcon = (properties: IconPropertiers) => {
   const color = properties.color
 
   switch (icon) {
-    case "SiGitHub":
+    case "SiGithub":
       return(<SiGithub color={color} size={iconSize} />)
     case "SiZenn":
       return(<SiZenn color={color} size={iconSize} />)
