@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  AspectRatio,
   Box,
   Heading,
   HStack,
@@ -14,6 +13,7 @@ import HeadBlock from '@/components/Common/HeadBlock'
 
 import { ServiceLink } from '@/common/types'
 import { commonStyles } from '@/common/consts/common-styles'
+import useWindowSize from '@/hooks/useWindowSize'
 import linkData from '@/data/serviceLinks.json'
 import eyeCatchImage from '@/images/home/eyecatch.jpg'
 
@@ -24,19 +24,18 @@ type IconPropertiers = {
 
 const Home = () => {
   const links: ServiceLink[] = linkData.data
+  const { width } = useWindowSize()
+  const eyecatchHeight = width * (2 / 3)
 
   return (
     <>
       <HeadBlock title={'Home | Youki'} />
       <Box
-        py={{ base: '0', sm: '20px' }}
         m="auto"
-        height="auto"
+        height={{ base: eyecatchHeight, sm: eyecatchHeight * 0.6 }}
         width={{ base: '100%', sm: '60%' }}
       >
-        <AspectRatio ratio={ 16 / 9 }>
-          <LazyLoadImage src={eyeCatchImage} />
-        </AspectRatio>
+        <LazyLoadImage src={eyeCatchImage} />
       </Box>
 
       {/* contents */}
