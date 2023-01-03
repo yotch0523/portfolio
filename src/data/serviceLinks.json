@@ -9,11 +9,6 @@
             "name": "Twitter",
             "to": "https://twitter.com/YoukiYotch",
             "color": "#009bf0"
-        },
-        {
-            "name": "LinkedIn",
-            "to": "https://www.linkedin.com/in/youki-yoshioka-4616051a9/",
-            "color": "#0e76a8"
         }
     ]
 }

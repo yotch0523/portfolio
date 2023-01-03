@@ -1,13 +1,12 @@
 import React from 'react'
 import {
+  AspectRatio,
   Box,
   Heading,
   HStack,
   Link,
-  Text,
 } from '@chakra-ui/react'
 import GithubIcon from '@patternfly/react-icons/dist/esm/icons/github-icon'
-import LinkedinIcon from '@patternfly/react-icons/dist/esm/icons/linkedin-icon'
 import TwitterIcon from '@patternfly/react-icons/dist/esm/icons/twitter-icon'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
@@ -32,9 +31,12 @@ const Home = () => {
       <Box
         py={{ base: '0', sm: '20px' }}
         m="auto"
+        height="auto"
         width={{ base: '100%', sm: '60%' }}
       >
-        <LazyLoadImage src={eyeCatchImage} />
+        <AspectRatio ratio={ 16 / 9 }>
+          <LazyLoadImage src={eyeCatchImage} />
+        </AspectRatio>
       </Box>
 
       {/* contents */}
@@ -51,7 +53,6 @@ const Home = () => {
             )
           })}
         </HStack>
-        <Text mt="10">under development...</Text>
       </Box>
     </>
   )
@@ -67,8 +68,6 @@ const GetIcon = (properties: IconPropertiers) => {
       return(<GithubIcon color={color} size={iconSize} />)
     case "Twitter":
       return(<TwitterIcon color={color} size={iconSize} />)
-    case "LinkedIn":
-      return(<LinkedinIcon color={color} size={iconSize} />)
   }
   return(<></>)
 }
