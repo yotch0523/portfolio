@@ -52,13 +52,12 @@ const Menu = () => {
 
       <Fade in={isOpen}>
         <Flex
-          bg={'black'}
+          bg={"rgba(0, 0, 0, .8)"}
           color={'white'}
           display={isOpen ? 'flex' : 'none'}
           flexFlow={'column'}
           justifyContent="center"
           margin="auto"
-          opacity={'.8'}
           position="fixed"
           top="0"
           bottom="0"
