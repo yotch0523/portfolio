@@ -5,12 +5,10 @@ import {
   HStack,
   Text,
 } from '@chakra-ui/react'
-import {
-  SiCsharp,
-  SiTypescript,
-  SiPhp,
-  SiMicrosoftazure,
-} from 'react-icons/si'
+
+import JsSquareIcon from '@patternfly/react-icons/dist/esm/icons/js-square-icon'
+import PhpIcon from '@patternfly/react-icons/dist/esm/icons/php-icon'
+import AzureIcon from '@patternfly/react-icons/dist/esm/icons/azure-icon'
 
 import HeadBlock from '@/components/Common/HeadBlock'
 import { commonStyles } from '@/common/consts/common-styles'
@@ -18,7 +16,7 @@ import { Skill } from '@/common/types'
 import skillData from '@/data/skills.json'
 
 type IconPropertiers = {
-  icon: string;
+  name: string;
   color: string;
 }
 
@@ -36,7 +34,7 @@ const About = () => {
           <Text>1991年生まれ。</Text>
           <Text>SEをしています。</Text>
           <Text>主にバックエンドの実装やインフラストラクチャの構成を担当しています。</Text>
-          <Text>AzureやTypeScriptが好きです。最近、趣味でGolangを始めました。</Text>
+          <Text>AzureやJavaScriptが好きです。最近、趣味でGolangを始めました。</Text>
         </Box>
 
         <Box pt={commonStyles.innerContentWrap.paddingTop}>
@@ -45,8 +43,7 @@ const About = () => {
             {
               skills.map((skill, _) => {
                 return(
-                  // <Icon name={skill.name} icon={skill.icon} color={skill.color} size={iconSize} />
-                  <GetIcon key={`skill-${skill.name}`} icon={skill.icon} color={skill.color} />
+                  <GetIcon key={`skill-${skill.name}`} name={skill.name} color={skill.color} />
                 )
               })
             }
@@ -58,19 +55,17 @@ const About = () => {
 }
 
 const GetIcon = (properties: IconPropertiers) => {
-  const iconSize = 32
-  const icon = properties.icon
+  const iconSize = 'xl'
+  const name = properties.name
   const color = properties.color
 
-  switch (icon) {
-    case "SiCsharp":
-      return(<SiCsharp color={color} size={iconSize} />)
-    case "SiTypescript":
-      return(<SiTypescript color={color} size={iconSize} />)
-    case "SiPhp":
-      return(<SiPhp color={color} size={iconSize} />)
-    case "SiMicrosoftazure":
-      return(<SiMicrosoftazure color={color} size={iconSize} />)
+  switch (name) {
+    case "JavaScript":
+      return(<JsSquareIcon color={color} size={iconSize} />)
+    case "PHP":
+      return(<PhpIcon color={color} size={iconSize} />)
+    case "Azure":
+      return(<AzureIcon color={color} size={iconSize} />)
   }
   return(<></>)
 }

@@ -2,22 +2,14 @@
     "data": [
         {
             "name": "Azure",
-            "icon": "SiMicrosoftazure",
             "color": "#0078d4"
         },
         {
-            "name": "C#",
-            "icon": "SiCsharp",
-            "color": "#ac99ea"
-        },
-        {
-            "name": "TypeScript",
-            "icon": "SiTypescript",
-            "color": "#3178c6"
+            "name": "JavaScript",
+            "color": "#F0DB4F"
         },
         {
             "name": "PHP",
-            "icon": "SiPhp",
             "color": "#7a86b8"
         }
     ]

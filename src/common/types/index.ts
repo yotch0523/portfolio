@@ -5,13 +5,11 @@ export type MenuLink = {
 
 export type ServiceLink = {
   name: string;
-  icon: string;
   to: string;
   color: string;
 }
 
 export type Skill = {
   name: string;
-  icon: string;
   color: string;
 }

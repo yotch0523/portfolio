@@ -8,5 +8,6 @@ export const commonStyles = {
   },
   innerContentWrap: {
     paddingTop: '40px',
-  }
+  },
+  mobileDeviceWidth: 480,
 } as const

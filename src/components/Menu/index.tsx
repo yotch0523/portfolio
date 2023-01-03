@@ -9,6 +9,7 @@ import {
 
 import Bar from '@/components/Menu/Bar'
 import MyHamburger from '@/components/Menu/MyHamburger'
+import { commonStyles } from '@/common/consts/common-styles'
 import { MenuLink } from '@/common/types'
 import useWindowSize from '@/hooks/useWindowSize'
 
@@ -17,8 +18,7 @@ const Menu = () => {
   const { width } = useWindowSize()
   const links = getLinks()
 
-  const MOBILE_DEVICE_WIDTH = 480
-  const showHamburger = width <= MOBILE_DEVICE_WIDTH
+  const showHamburger = width <= commonStyles.mobileDeviceWidth
 
   const HamburgerMenu = () => {
     if (!showHamburger) return(<></>)
