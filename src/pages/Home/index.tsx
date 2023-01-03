@@ -6,12 +6,9 @@ import {
   Link,
   Text,
 } from '@chakra-ui/react'
-import {
-  SiGithub,
-  SiLinkedin,
-  SiZenn,
-  SiTwitter,
-} from 'react-icons/si'
+import GithubIcon from '@patternfly/react-icons/dist/esm/icons/github-icon'
+import LinkedinIcon from '@patternfly/react-icons/dist/esm/icons/linkedin-icon'
+import TwitterIcon from '@patternfly/react-icons/dist/esm/icons/twitter-icon'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import HeadBlock from '@/components/Common/HeadBlock'
@@ -22,7 +19,7 @@ import linkData from '@/data/serviceLinks.json'
 import eyeCatchImage from '@/images/home/eyecatch.jpg'
 
 type IconPropertiers = {
-  icon: string;
+  name: string;
   color: string;
 }
 
@@ -49,7 +46,7 @@ const Home = () => {
           {links.map((link, _) => {
             return(
               <Link href={link.to} isExternal={true} key={`icon-link-${link.name}`}>
-                <GetIcon icon={link.icon} color={link.color} />
+                <GetIcon name={link.name} color={link.color} />
               </Link>
             )
           })}
@@ -61,19 +58,17 @@ const Home = () => {
 }
 
 const GetIcon = (properties: IconPropertiers) => {
-  const iconSize = 32
-  const icon = properties.icon
+  const iconSize = 'lg'
+  const name = properties.name
   const color = properties.color
 
-  switch (icon) {
-    case "SiGithub":
-      return(<SiGithub color={color} size={iconSize} />)
-    case "SiZenn":
-      return(<SiZenn color={color} size={iconSize} />)
-    case "SiTwitter":
-      return(<SiTwitter color={color} size={iconSize} />)
-    case "SiLinkedin":
-      return(<SiLinkedin color={color} size={iconSize} />)
+  switch (name) {
+    case "GitHub":
+      return(<GithubIcon color={color} size={iconSize} />)
+    case "Twitter":
+      return(<TwitterIcon color={color} size={iconSize} />)
+    case "LinkedIn":
+      return(<LinkedinIcon color={color} size={iconSize} />)
   }
   return(<></>)
 }

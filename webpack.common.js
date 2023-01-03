@@ -42,6 +42,7 @@ module.exports = {
         })
     ],
     optimization: {
+        sideEffects: true,
         splitChunks: {
             chunks :'all'
         }
