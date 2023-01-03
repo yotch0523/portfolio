@@ -31,7 +31,6 @@ const About = () => {
 
         <Box pt={commonStyles.innerContentWrap.paddingTop}>
           <Text>Youki</Text>
-          <Text>1991年生まれ。</Text>
           <Text>SEをしています。</Text>
           <Text>主にバックエンドの実装やインフラストラクチャの構成を担当しています。</Text>
           <Text>AzureやJavaScriptが好きです。最近、趣味でGolangを始めました。</Text>
