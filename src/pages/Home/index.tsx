@@ -3,7 +3,6 @@ import {
   Box,
   Heading,
   HStack,
-  Image,
   Link,
   Text,
 } from '@chakra-ui/react'
@@ -13,6 +12,7 @@ import {
   SiZenn,
   SiTwitter,
 } from 'react-icons/si'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import HeadBlock from '@/components/Common/HeadBlock'
 
@@ -32,12 +32,13 @@ const Home = () => {
   return (
     <>
       <HeadBlock title={'Home | Youki'} />
-      <Image
+      <Box
         py={{ base: '0', sm: '20px' }}
         m="auto"
-        src={eyeCatchImage}
         width={{ base: '100%', sm: '60%' }}
-      />
+      >
+        <LazyLoadImage src={eyeCatchImage} />
+      </Box>
 
       {/* contents */}
       <Box px={commonStyles.contentWrap.paddingX} py={commonStyles.contentWrap.paddingY}>
