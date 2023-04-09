@@ -26,14 +26,14 @@ const About = () => {
   return (
     <>
       <Box px={commonStyles.contentWrap.paddingX} py={commonStyles.contentWrap.paddingY}>
-        <HeadBlock title={'About | Youki'} />
+        <HeadBlock title={'About | yyouki'} />
         <Heading as="h1" size="2xl">About</Heading>
 
         <Box pt={commonStyles.innerContentWrap.paddingTop}>
-          <Text>Youki</Text>
+          <Text>yyouki</Text>
           <Text>SEをしています。</Text>
           <Text>主にバックエンドの実装やインフラストラクチャの構成を担当しています。</Text>
-          <Text>AzureやJavaScriptが好きです。最近、趣味でGolangを始めました。</Text>
+          <Text>C#、Azure、JavaScriptが好きです。</Text>
         </Box>
 
         <Box pt={commonStyles.innerContentWrap.paddingTop}>

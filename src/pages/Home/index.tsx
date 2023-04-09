@@ -6,7 +6,7 @@ import {
   Link,
 } from '@chakra-ui/react'
 import GithubIcon from '@patternfly/react-icons/dist/esm/icons/github-icon'
-import TwitterIcon from '@patternfly/react-icons/dist/esm/icons/twitter-icon'
+import InstagramIcon from '@patternfly/react-icons/dist/esm/icons/instagram-icon'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import HeadBlock from '@/components/Common/HeadBlock'
@@ -29,7 +29,7 @@ const Home = () => {
 
   return (
     <>
-      <HeadBlock title={'Home | Youki'} />
+      <HeadBlock title={'Home | yyouki'} />
       <Box
         m="auto"
         height={{ base: eyecatchHeight, sm: eyecatchHeight * 0.6 }}
@@ -40,7 +40,7 @@ const Home = () => {
 
       {/* contents */}
       <Box px={commonStyles.contentWrap.paddingX} py={commonStyles.contentWrap.paddingY}>
-        <Heading as="h1" size="2xl">Youki</Heading>
+        <Heading as="h1" size="2xl">yyouki</Heading>
 
         {/* links */}
         <HStack pt={commonStyles.innerContentWrap.paddingTop} spacing={4}>
@@ -65,8 +65,8 @@ const GetIcon = (properties: IconPropertiers) => {
   switch (name) {
     case "GitHub":
       return(<GithubIcon color={color} size={iconSize} />)
-    case "Twitter":
-      return(<TwitterIcon color={color} size={iconSize} />)
+    case "Instagram":
+      return(<InstagramIcon color={color} size={iconSize} />)
   }
   return(<></>)
 }
