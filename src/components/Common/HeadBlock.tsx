@@ -12,8 +12,8 @@ const HeadBlock = (props: Props) => {
 
   return(
     <Helmet>
-      <title>{ title ?? 'Youki' }</title>
-      <meta name="description" content={ description ?? 'Youki\'s portfolio' } />
+      <title>{ title ?? 'yyouki' }</title>
+      <meta name="description" content={ description ?? 'yyouki\'s portfolio' } />
     </Helmet>
   )
 }

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <Flex borderWidth={'1px'} justifyContent="center">
-        &copy; Youki
+        &copy; yyouki
       </Flex>
     </>
   )
