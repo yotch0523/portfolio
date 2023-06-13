@@ -32,7 +32,6 @@ const Home = () => {
       <HeadBlock title={'Home | yyouki'} />
       <Box
         m="auto"
-        height={{ base: eyecatchHeight, sm: eyecatchHeight * 0.6 }}
         width={{ base: '100%', sm: '60%' }}
       >
         <LazyLoadImage src={eyeCatchImage} />
